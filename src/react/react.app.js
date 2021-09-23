@@ -11,8 +11,12 @@ const reactLifecycles = singleSpaReact({
   suppressComponentDidCatchWarning: true,
 });
 
+function customMount(props) {
+  return reactLifecycles.mount(props);
+}
+
 export const bootstrap = [reactLifecycles.bootstrap];
 
-export const mount = [reactLifecycles.mount];
+export const mount = [customMount];
 
 export const unmount = [reactLifecycles.unmount];

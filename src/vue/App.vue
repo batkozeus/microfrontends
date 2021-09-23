@@ -12,19 +12,20 @@
 
 <script>
 export default {
+  props: ['store'],
   data() {
     return {
-      count: window.store.count,
+      count: this.store.count,
     }
   },
   methods: {
     increment() {
-      window.store.increment()
+      this.store.increment();
     },
   },
   mounted() {
-    window.store.subscribe(() => {
-      this.count = window.store.count
+    this.store.subscribe(() => {
+      this.count = this.store.count
     })
   },
 }

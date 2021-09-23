@@ -20,12 +20,12 @@ const styles = {
   },
 };
 
-const App = () => {
-  const [count, setCount] = React.useState(window.store.count);
+const App = ({ store }) => {
+  const [count, setCount] = React.useState(store.count);
 
   React.useEffect(() => {
-    window.store.subscribe(() => {
-      setCount(window.store.count)
+    store.subscribe(() => {
+      setCount(store.count)
     })
   }, []);
 
